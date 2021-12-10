@@ -34,8 +34,7 @@ pop_sound = pygame.mixer.Sound(os.path.join(path1, "pop.ogg"))
 music = pygame.mixer.music.load(os.path.join(path1, "music.ogg"))
 pygame.mixer.music.set_volume(0.4)
 
-# Load images of the Character (there are two popular ways)
-# one way to do it - using the sprites that face left
+
 standing = pygame.transform.scale(pygame.image.load(os.path.join(path, "standing.png")),(70,70))
 left = [pygame.image.load(os.path.join(path, "L1.png")),
         pygame.image.load(os.path.join(path, "L2.png")),
@@ -74,7 +73,6 @@ right_enemy = [pygame.image.load(os.path.join(path, "R1E.png")),
 boss_img = [pygame.transform.scale(pygame.image.load(os.path.join(path,"R1B.png")),(60,60)),
             pygame.transform.scale(pygame.image.load(os.path.join(path,"R2B.png")),(60,60)),
             pygame.transform.scale(pygame.image.load(os.path.join(path,"R3B.png")),(60,60))]
-# another (faster) way to do it - using the sprites that face right
 right = []
 for i in range(1,10):
     right.append(pygame.image.load(os.path.join(path,f"R{i}.png")))
@@ -158,13 +156,6 @@ def draw_game():
     # bg
     global i, tower_health, round
     win.blit(bg, (0,0))
-    #win.blit(bg, (i, 0))
-    #print(i)
-    #win.blit(bg,(WIDTH+i,0))
-    #if i == WIDTH:
-     #   win.blit(bg,(WIDTH+i,0))
-      #  i = 0
-    #i -= 1
     # player
     player.draw(win)
     # bullet
